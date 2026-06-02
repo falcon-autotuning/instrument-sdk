@@ -1,0 +1,3 @@
+name: "{{ cookiecutter.instrument_name }}"
+api_ref: "__API_REF__"
+...

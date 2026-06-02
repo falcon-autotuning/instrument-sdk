@@ -1,0 +1,60 @@
+api_version: "1.0.0"
+instrument:
+  vendor: Stanford Research Systems
+  model: SIM900
+  identifier: S900
+  description: "Mainframe with 8 SIM928s slotted into it"
+protocol:
+  type: "VISA"
+channel_groups:
+  - name: analog
+    description: "Analog output channels"
+    channel_parameter:
+      name: channel
+      type: int
+      min: 1
+      max: 8
+      description: "Instrument output ports"
+    io_types:
+      - suffix: voltage
+        type: float
+        min: -20.0
+        max: 20.0
+        precision: 0.001
+        role: output
+        unit: "V"
+        description: "the output voltage of the SIM928"
+      - suffix: enabled_output
+        type: bool
+        role: setting
+        description: "if the channel can output a voltage or not"
+io:
+commands:
+  SET_VOLTAGE:
+    template: 'SNDT {analog},"VOLT {voltage}"'
+    description: "Set the voltage for a specified channel"
+    channel_group: analog
+    parameters:
+      - io: voltage
+    outputs: []
+
+  QUERY_VOLTAGE:
+    template: 'SNDT {analog},"VOLT?"'
+    description: "Queries the current voltage on a specified channel"
+    channel_group: analog
+    parameters: []
+    outputs: [voltage]
+
+  OUTPUT_ON:
+    template: 'SNDT {analog},"OPON"'
+    description: "Turns the output on for a selected channel"
+    channel_group: analog
+    parameters: []
+    outputs: []
+
+  OUTPUT_OFF:
+    template: 'SNDT {analog},"OPOF"'
+    description: "Turns the output off for a selected channel"
+    channel_group: analog
+    parameters: []
+    outputs: []

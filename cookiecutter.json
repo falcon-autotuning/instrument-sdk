@@ -1,0 +1,6 @@
+{
+  "project_name": "instrument",
+  "instrument_name": "{{ cookiecutter.project_name | replace('-', '_') | replace(' ', '_') | upper }}",
+  "description": "An instrument plugin for the Falcon autotuning framework",
+  "homepage_url": "github url for the project"
+}
