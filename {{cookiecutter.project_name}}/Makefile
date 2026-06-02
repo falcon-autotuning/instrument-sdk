@@ -5,7 +5,7 @@ PRESET ?= linux-clang-release
 CMAKE_BUILD_DIR := build/$(PRESET)
 
 help:
-	@echo "{{PROJECT_NAME}} Build System"
+	@echo "{{cookiecutter.project_name}} Build System"
 	@echo "============================="
 	@echo ""
 	@echo "Available presets:"
