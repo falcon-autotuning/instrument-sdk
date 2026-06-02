@@ -1,8 +1,8 @@
 {
-  "name": "{{PROJECT_NAME}}",
+  "name": "{{cookiecutter.project_name}}",
   "version": "1.0.0",
-  "description": "{{DESCRIPTION}}",
-  "homepage": "{{HOMEPAGE}}",
+  "description": "{{cookiecutter.description}}",
+  "homepage": "{{cookiecutter.homepage_url}}",
   "dependencies": [
     "cmocka",
     {
