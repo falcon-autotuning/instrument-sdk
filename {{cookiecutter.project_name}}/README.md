@@ -1,4 +1,4 @@
-# {{ cookiecutter.project\_name }}
+# {{ cookiecutter.project_name }}
 
 Instrument plugin project generated from the Instrument SDK template.
 
